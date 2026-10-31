@@ -1,0 +1,36 @@
+[project]
+name = "ppg-sleep-staging"
+version = "0.1.0"
+description = "3-class sleep staging (wake, NREM, REM) from a wrist pulse signal on DREAMT, with a streaming decoder"
+requires-python = ">=3.12"
+# Versions are the ones installed when the results were produced (2026-10-24), as minimums.
+dependencies = [
+    "numpy>=2.5.3",
+    "pandas>=2.3.3",
+    "scipy>=1.18.1",
+    "scikit-learn>=1.9.1",
+    "matplotlib>=3.11.2",
+    "neurokit2>=0.2.13",
+    "torch>=2.14.1",
+    "pylsl>=1.18.5",
+]
+
+[dependency-groups]
+# installed by a plain `uv sync`: what the tests need
+dev = [
+    "pytest>=9.1.1",
+]
+# `uv sync --group notebooks`: what running the notebooks needs
+notebooks = [
+    "ipykernel>=7.4.0",
+    "nbconvert>=7.17.1",
+    "nbformat>=5.11.1",
+]
+
+[tool.uv]
+# the code lives in flat modules under src/ that tests and notebooks put on the path
+# themselves, so this is a set of dependencies, not an installable package
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,32 @@
+data/
+*.parquet
+notebooks/out_*.csv
+.venv/
+__pycache__/
+# added 2026-10-24: company code, per-person derived files, paper copies, system files
+ecg_detector_check/cache/
+ecg_detector_check/*.csv
+qc/out/
+docs/papers/
+.DS_Store
+.pytest_cache/
+.ipynb_checkpoints/
+*.log
+PUBLISH_CHECKLIST.md
+PUBLISH_RUNBOOK.md
+# working notes, private (decided 2026-10-26)
+STATUS.md
+PLAN.md
+CODE_PLAN.md
+SCOPE.md
+SPEC.md
+VALIDATION_PLAN.md
+OVERVIEW.md
+FOUNDATION_MODELS.md
+PUBLISH_RUNBOOK.md
+docs/live_decoding_design.md
+docs/live_decoding_plan.md
+docs/literature_review.md
+ecg_detector_check/
+# superseded notebook, left out of the repo (decided 2026-10-26)
+notebooks/02_beats_run2_3people_superseded.ipynb
